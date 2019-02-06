@@ -102,3 +102,15 @@ Index of the first occurrence of x in s (at or after index i and before index j)
 
 ### list
 
+    list.append()  #把一个元素添加到列表的结尾
+    list.extend()  #将一个给定列表中的所有元素都添加到另一个列表中
+    list.insert(i,x)   #在指定位置插入一个元素。第一个参数是准备插入到其前面的那个元素的索引，例如 a.insert(0, x) 会插入到整个列表之前,而 a.insert(len(a), x) 相当于 a.append(x)
+    list.remove(x)  #删除列表中值为 *x* 的第一个元素。如果没有这样的元素，就会返回一个错误
+    list.pop([i])  #从列表的指定位置删除元素，并将其返回。如果没有指定索引，a.pop()返回最后一个元素
+    list.clear()  #从列表中删除所有元素,相当于 del a[:]
+    list.index(x)  #返回列表中第一个值为 *x* 的元素的索引,如果没有匹配的元素就会返回一个错误
+    list.count(x)  #统计x出现的次数
+    list.sort()  #对列表中的元素就地进行排序,改变原列表
+    list.reverse()  #就地倒排列表中的元素,改变原序列
+    list.copy()  #返回列表的一个浅拷贝,等同于 a[:]
+
