@@ -20,6 +20,51 @@
 
 ## sequence
 
+Tuple, List, range
+
+**Common operations**
+
+    'abc'[0] = 'a'; (a,b,c)[0] = 'a'; [a,b,c][0] = 'a'
+
+> slice. 
+
+    'abc'[0:2] = 'ab', ['a','b','c'][0:2] = ['a','b'], ('a', 'b','c')[0:2] = ('a', 'b')
+
+> +, *
+
+    'a' + 'b' = 'ab'
+    'a' * 3 = 'aaa'
+    ['a'] = ['a', 'a', 'a']
+
+> in, not in
+
+    'a' in 'abc' >> True
+    'd' not in 'abc' >> True
+    'c' in ['a', 'b'] >> False
+
+> len(), max(), min()
+
+    len('ab') >> 2
+    len([1,3,'axb']) >> 3
+    max('abc) >> 'c'
+    max([1,2,3,'abc']) >> TypeError: '>' not supported between instances of 'str' and 'int'
+
+    min([1,2,4]) >> 1
+> AScii location
+    ord('w') >> 119
+    ord(1) >> TypeError: ord() expected string of length 1, but int found
+
+> s.index(x, [, i[, j]])
+Index of the first occurrence of x in s (at or after index i and before index j)
+
+
+> s.count(x) total number of occurrences of x in s 
+
+
+> string(text sequence type),  tuple, range are immutable. 
+
+
+
 ### string
     s = 'abc'
 
@@ -54,4 +99,6 @@
     s.endwith(str[,start[,end]])   #同上
     s.isalnum()   #是否全为数字或者字母
     s.isalpha(), s.isdigit(),s.isspace(), s.islower(), s.isupper(), s.istitle()(是否首字母大写)
+
+### list
 
