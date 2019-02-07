@@ -561,15 +561,21 @@ call file_name.func()
 ## Class
 
     class Player(): ## define a class 
-      def __init__(self, name, hp): ## initialize a new instance
-        self.name = name
+      def __init__(self, name, hp, accu): ## initialize a new instance
+        self.__name = name # attribute # keep attribute private by adding '__'
         self.hp = hp
+        self.accu = accu # add new attribute
       def print_role(self): ## inside func must have a self as the first parameter
         print('%s: %s' %(self.name, self.hp))
 
-      user1 = Player('tom', 100)
-      user2 = Player('Jon', 99)
+      def updateName(self, newName):
+        self.name = newName
+
+      user1 = Player('tom', 100, 'soldier')
+      user2 = Player('Jon', 99, 'master')
 
       user1.print_role()
       user2.print_role()
-
+    class Monster():
+      'defination of a monster'
+      pass
