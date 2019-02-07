@@ -538,3 +538,23 @@ We can also use with statement to open more than one file.
         ...
         ... 
         out_file.write(parsed_line)
+
+### module
+
+import module_name
+
+    import os
+    import time
+    ...
+    import module_name as new_name
+    from time import sleep # not recommend
+    sleep() ## use directly
+
+**how define a module**
+
+define func inside file_name.py 
+import file_name in new file
+call file_name.func()
+
+
+
