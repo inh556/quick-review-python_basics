@@ -484,4 +484,45 @@ always close the file after operation
 
     b = a_Line(2,0)
     print(b(2)) # 4
-  
+
+### Decorators
+
+**without paramethers**
+    def outer(func):
+      def inner(a, b):
+        print('started')
+        func(a, b)
+        print('stop')
+      return inner
+
+    @outer
+    def add(a, b):
+      print(a + b)
+
+    @outer
+    def sub(a, b):
+      print(a - b)
+    
+    add(3,4)
+    sub(8,1)
+
+**with paramethers**
+    def outer_outer(argv):
+      def outer(func):
+        def inner(a, b):
+          print('started %s %s' %(argv, func.__name__))
+          func(a, b)
+          print('stop')
+        return inner
+      return outer
+
+    @outer_outer('add_module')
+    def add(a, b):
+      print(a + b)
+
+    @outer_outer('sub_module')
+    def sub(a, b):
+      print(a - b)
+
+    add(4 ,5)
+    sub(7, 1)
