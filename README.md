@@ -385,3 +385,20 @@ always close the file after operation
      return len(1 + len(ohters))
     
     func(1,2,3,4) ## return 4
+
+
+### scope
+
+    a = 123
+    def func():
+      a = 456
+      print(a) # 456
+    print(a) # 123
+
+> if define a global variable inside a function
+    a = 123
+    def func():
+      global a
+      a = 456
+      print(a) # 456
+    print(a) # 456
