@@ -282,3 +282,45 @@ when open a file, pointer is in the beginning
 
 always close the file after operation
 
+## Try Except
+
+    try:
+      # monitor
+    except Exception[, reason]:
+      # handle
+    finally:
+      # do something
+### SyntaxError SameError IndexError KeyError ValueError AtrtributeError ZeroDivisionError ....
+
+    try: 
+      a = '123'
+      a.append('4')
+    except AttributeError:
+      print('Can not append to str object')
+  
+      try: 
+        print(1/0)
+      except ZeroDivisionError as e:
+        print('0 can no be divided %s' %e)
+
+### Exception
+
+    try: 
+      print(1/0)
+    except Exception as e:
+      print(e))
+### customize Error
+
+    try: 
+      raise NameError('helloError')
+    except Exception as e:
+      print(e))
+### finally
+
+    try:
+      f = open('noexist.txt')
+    except Exception as e:
+      print(e)
+    finally:
+      f.close()
+
