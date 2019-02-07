@@ -157,8 +157,26 @@ as long as expression is true, execute continue
 
     for i in range(10):
       print(i)
+    
+    alist = []
+
+    for i in range(10):
+      if(i % 2 == 0):
+        alist.append(i*i)
+    
+    blist =[ i*i for i in range(10) if i % 2 == 0]
 
 
+
+### dictionary
+
+    {'hashValue': object}
+
+    stat = {}
+    for i in range(10):
+      stat[i] = 0
+    
+    stat = { i: 0 for i in range(10)}
 
 
 
