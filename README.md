@@ -324,3 +324,64 @@ always close the file after operation
     finally:
       f.close()
 
+## function
+
+    def my_func(name = 'John'):
+      # do something
+    
+    my_func('Jen')
+    my_func()
+
+### Python Lambda
+> lambda arguments : expression
+
+    x = lambda a : a + 10
+    print(x(5)) # 15
+
+    x = lambda a, b : a * b
+    print(x(5, 6)) # 30
+
+### keywords argument
+
+    def foo(*positional, **keywords):
+        print "Positional:", positional
+        print "Keywords:", keywords
+
+> The *positional argument will store all of the positional arguments passed to foo(), with no limit to how many you can provide:
+
+    >>> foo('one', 'two', 'three')
+    Positional: ('one', 'two', 'three')
+    Keywords: {}
+
+> The **keywords argument will store any keyword arguments:
+
+    >>> foo(a='one', b='two', c='three')
+    Positional: ()
+    Keywords: {'a': 'one', 'c': 'three', 'b': 'two'}
+
+> And of course, you can use both at the same time:
+
+    >>> foo('one','two',c='three',d='four')
+    Positional: ('one', 'two')
+    Keywords: {'c': 'three', 'd': 'four'}
+  
+    def func(a,b, c):
+      print('a'= %s' %a)
+      print('b'= %s' %b)
+      print('c'= %s' %c)
+
+    func(1,2,3)
+    a = 1
+    b = 2
+    c = 3
+
+    func(1, c = 3, b =2)
+    a = 1
+    b = 2
+    c = 3
+
+### changeable
+    def func(a, *others): # at least pass one argument
+     return len(1 + len(ohters))
+    
+    func(1,2,3,4) ## return 4
