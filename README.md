@@ -139,6 +139,24 @@ user_input = input('input a number': )
 **type(user_input) == 'str'**
 
 
+### for, while loop
+
+    while expression:
+      do something
+
+as long as expression is true, execute continue
+
+    for num in nums:
+      print(num)
+
+ iterate all the elements
+
+
+    for year in (2000, 2019):
+      print(%s 'year is %s year' %(year, chinese_zodiacs(year % 12)))
+
+    for i in range(10):
+      print(i)
 
 
 
