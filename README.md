@@ -114,3 +114,14 @@ Index of the first occurrence of x in s (at or after index i and before index j)
     list.reverse()  #就地倒排列表中的元素,改变原序列
     list.copy()  #返回列表的一个浅拷贝,等同于 a[:]
 
+### Chinese Zodiacs (example of string operation)
+
+chinese_zodiacs = '猴鸡狗猪鼠牛虎兔龙蛇马羊‘
+this_year = 2019;
+print(chinese_zodiacs[this_year % 12]);
+
+
+
+
+
+
