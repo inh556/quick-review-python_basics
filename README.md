@@ -573,11 +573,42 @@ call file_name.func()
 
     class Monster():
       'defination of a monster'
-      pass
-      
+      def __init__(self, hp=100):
+        self.__hp = hp
+      def run(self):
+        print('run to somewhere')
+      def whoami(self):
+        print('I am a monster')
+
+    class Animals(Monster):
+      def __init__(self, hp =10): # inheritance
+        super().__init__(hp)
+
+
+    class Boss(Monster):
+      def whoami(self): # override whoami method
+        print('I am a boss')
+
+
     user1 = Player('tom', 100, 'soldier')
     user2 = Player('Jon', 99, 'master')
 
     user1.print_role()
     user2.print_role()
 
+
+    m1 = Monster(100)
+    print(m1.hp)
+
+
+    m2 = Animals(1000)
+    print(m2.hp)
+    # print(m2.run())
+    m2.whoami()
+
+    m3 = Boss(9)
+    print(m3.hp)
+    m3.run()
+    m3.whoami()
+    m3.hp = 1
+    print(m3.hp)
