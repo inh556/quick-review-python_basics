@@ -464,3 +464,17 @@ always close the file after operation
     dic = {'a':1,'b':2,'c':3}
     dict(zip(dic.values(), dic.keys()))
     # {1: 'a', 2: 'b', 3: 'c'} # swap key-value pair
+
+## closure
+
+    def counter(start):
+      count = [start]
+      def add():
+        count[0] += 1
+        return count[0]
+      return add
+      
+    sum = counter(5)
+
+    print(sum()) #6
+    print(sum()) #7
