@@ -574,7 +574,7 @@ call file_name.func()
     class Monster():
       'defination of a monster'
       def __init__(self, hp=100):
-        self.__hp = hp
+        self.hp = hp 
       def run(self):
         print('run to somewhere')
       def whoami(self):
@@ -612,3 +612,18 @@ call file_name.func()
     m3.whoami()
     m3.hp = 1
     print(m3.hp)
+
+### with statement and class
+
+    class with1():
+      def __enter__(self):
+        print('run')
+      def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_tb is None:
+          print('exit normally')
+        else:
+          print('An error %s' %exc_tb)
+
+    with with1():
+      print('tst is runing')
+      raise NameError('testNameError')
