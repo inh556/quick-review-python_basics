@@ -178,7 +178,96 @@ as long as expression is true, execute continue
     
     stat = { i: 0 for i in range(10)}
 
+## File handling
 
+### open
 
+    open()  open takes two parameters; filename, and mode.
+> "r" - Read - Default value. Opens a file for reading, error if the file does not exist
 
+> "a" - Append - Opens a file for appending, creates the file if it does not exist
+
+> "w" - Write - Opens a file for writing, creates the file if it does not exist
+
+> "x" - Create - Creates the specified file, returns an error if the file exists
+
+In addition you can specify if the file should be handled as binary or text mode
+
+> "t" - Text - Default value. Text mode
+> "b" - Binary - Binary mode (e.g. images)
+
+    f = open("demofile.txt") == f = open("demofile.txt", "rt")
+
+> The open() function returns a file object, which has a read() method for reading the content of the file:
+    f = open("demofile.txt", "r")
+    print(f.read())
+>By default the read() method returns the whole text, but you can also specify how many character you want to return:
+
+### read
+
+#### Return the 5 first characters of the file:
+    f = open("demofile.txt", "r")
+    print(f.read(5))
+
+#### You can return one line by using the readline() method:
+
+Read one line of the file:
+
+    f = open("demofile.txt", "r")
+    print(f.readline())
+
+Loop through the file line by line:
+
+    f = open("demofile.txt", "r")
+    for x in f:
+      print(x)
+
+### write
+
+To write to an existing file, you must add a parameter to the open() function:
+
+> "a" - Append - will append to the end of the file
+
+> "w" - Write - will overwrite any existing content
+
+Open the file "demofile.txt" and append content to the file:
+
+    f = open("demofile.txt", "a")
+    f.write("Now the file has one more line!")
+
+Open the file "demofile.txt" and overwrite the content:
+
+    f = open("demofile.txt", "w")
+    f.write("Woops! I have deleted the content!")
+
+### Create a New File
+To create a new file in Python, use the open() method, with one of the following parameters:
+
+> "x" - Create - will create a file, returns an error if the file exist
+
+> "a" - Append - will create a file if the specified file does not exist
+
+> "w" - Write - will create a file if the specified file does not exist
+
+### delete file
+
+> To delete a file, you must import the OS module, and run its os.remove() function:
+
+    import os
+    os.remove("demofile.txt")
+
+### Check if File exist:
+> To avoid getting an error, you might want to check if the file exist before you try to delete it:
+
+    import os
+    if os.path.exists("demofile.txt"):
+      os.remove("demofile.txt")
+    else:
+      print("The file does not exist")
+
+### Delete Folder
+To delete an entire folder, use the os.rmdir() method:
+
+    import os
+    os.rmdir("myfolder")
 
