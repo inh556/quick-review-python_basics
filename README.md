@@ -203,25 +203,25 @@ In addition you can specify if the file should be handled as binary or text mode
     print(f.read())
 >By default the read() method returns the whole text, but you can also specify how many character you want to return:
 
-### read
+### read readline() readlines()
 
 #### Return the 5 first characters of the file:
     f = open("demofile.txt", "r")
     print(f.read(5))
-
+     f.close()
 #### You can return one line by using the readline() method:
 
 Read one line of the file:
 
     f = open("demofile.txt", "r")
     print(f.readline())
-
+     f.close()
 Loop through the file line by line:
 
-    f = open("demofile.txt", "r")
-    for x in f:
-      print(x)
-
+    f = open("demofile.txt")
+    for line in f.readlines():
+      print(line)
+     f.close()
 ### write
 
 To write to an existing file, you must add a parameter to the open() function:
@@ -234,12 +234,12 @@ Open the file "demofile.txt" and append content to the file:
 
     f = open("demofile.txt", "a")
     f.write("Now the file has one more line!")
-
+     f.close()
 Open the file "demofile.txt" and overwrite the content:
 
     f = open("demofile.txt", "w")
     f.write("Woops! I have deleted the content!")
-
+    f.close()
 ### Create a New File
 To create a new file in Python, use the open() method, with one of the following parameters:
 
@@ -270,4 +270,15 @@ To delete an entire folder, use the os.rmdir() method:
 
     import os
     os.rmdir("myfolder")
+
+### seek(offset, from_what) 
+
+from_what: 0 beginning,  1 current position, 2 tail
+
+when open a file, pointer is in the beginning
+
+
+### close()
+
+always close the file after operation
 
