@@ -526,3 +526,15 @@ always close the file after operation
 
     add(4 ,5)
     sub(7, 1)
+  
+### “with” statement 
+
+> The with statement creates a context manager and it will automatically close the file handler
+
+We can also use with statement to open more than one file.
+
+    with open(in_filename) as in_file, open(out_filename, 'w') as out_file:
+      for line in in_file:
+        ...
+        ... 
+        out_file.write(parsed_line)
