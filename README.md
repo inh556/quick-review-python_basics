@@ -121,6 +121,27 @@ this_year = 2019;
 print(chinese_zodiacs[this_year % 12]);
 
 
+### if elif(else if)
+
+
+    if condition_is_true:
+        do something
+
+    if expression:
+      do sommething
+    elif expression:
+      do something
+    else:
+      do something
+
+user_input = input('input a number': )
+
+**type(user_input) == 'str'**
+
+
+
+
+
 
 
 
