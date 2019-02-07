@@ -558,3 +558,18 @@ call file_name.func()
 
 
 
+## Class
+
+    class Player(): ## define a class 
+      def __init__(self, name, hp): ## initialize a new instance
+        self.name = name
+        self.hp = hp
+      def print_role(self): ## inside func must have a self as the first parameter
+        print('%s: %s' %(self.name, self.hp))
+
+      user1 = Player('tom', 100)
+      user2 = Player('Jon', 99)
+
+      user1.print_role()
+      user2.print_role()
+
