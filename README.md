@@ -571,11 +571,13 @@ call file_name.func()
       def updateName(self, newName):
         self.name = newName
 
-      user1 = Player('tom', 100, 'soldier')
-      user2 = Player('Jon', 99, 'master')
-
-      user1.print_role()
-      user2.print_role()
     class Monster():
       'defination of a monster'
       pass
+      
+    user1 = Player('tom', 100, 'soldier')
+    user2 = Player('Jon', 99, 'master')
+
+    user1.print_role()
+    user2.print_role()
+
