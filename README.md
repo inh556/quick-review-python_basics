@@ -402,3 +402,65 @@ always close the file after operation
       a = 456
       print(a) # 456
     print(a) # 456
+
+## Iterator
+
+    mytuple = ("apple", "banana", "cherry")
+    myit = iter(mytuple)
+
+    print(next(myit)) # 'apple'
+    print(next(myit)) # 'banana'
+    print(next(myit)) # 'cherry'
+
+    mytuple = ("apple", "banana", "cherry")
+
+    for x in mytuple:
+      print(x) 
+    'apple'
+    'banana'
+    'cherry'
+
+    mystr = "apple"
+
+    for x in mystr:
+      print(x)
+
+    'a'
+    'p'
+    'p'
+    'l'
+    'e'
+### creat a iterator
+
+    def frange(start, stop, step):
+      x = start
+      while(x < stop):
+        yield x
+        x += step
+    for i in frange(10, 12, 0.5):
+      print(x)
+    
+    10 / 10.5 /11 /11.5
+
+
+## build-in function
+
+### filter
+    a = [1,2,3]
+    list(filter(lambda x: x >= 3, a))
+    # [3]
+
+### map
+     
+    list(map(lambda x: x * 2, a))
+    # [2,4,6]
+### reduce
+    reduce(lambda a, b:a +b, a)
+    # 6
+### zip
+    dict(zip((1,2,3), (4,5,6)))
+    # {1: 4, 2: 5, 3: 6}
+
+    dic = {'a':1,'b':2,'c':3}
+    dict(zip(dic.values(), dic.keys()))
+    # {1: 'a', 2: 'b', 3: 'c'} # swap key-value pair
