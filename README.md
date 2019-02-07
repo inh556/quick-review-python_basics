@@ -478,3 +478,10 @@ always close the file after operation
 
     print(sum()) #6
     print(sum()) #7
+
+    def a_Line(a,b):
+      return lambda x: a*x + b
+
+    b = a_Line(2,0)
+    print(b(2)) # 4
+  
