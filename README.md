@@ -673,4 +673,60 @@ call file_name.func()
   
   More(https://docs.python.org/3.7/library/threading.html)
 
-  
+  ## library
+
+  ### re
+  match and search
+
+> '.' match character except a newline  If the DOTALL flag has been specified, this matches any character including a newline.
+
+    e.g '...' match any three-chrs letter 'abc' 'cbs
+> '^' star Matches the start of the string, and in MULTILINE mode also matches immediately after each newline
+
+> '$' Matches the end of the string or just before the newline at the end of the stringand in MULTILINE mode also matches before a newline.
+
+> '*' Causes the resulting RE to match 0 or more repetitions of the preceding RE, as many repetitions as are possible. ab* will match ‘a’, ‘ab’, or ‘a’ followed by any number of ‘b’s.
+
+    ab* matchs 'a', 'ab', 'abbb......'
+> '+' Causes the resulting RE to match 1 or more repetitions of the preceding RE. ab+ will match ‘a’ followed by any non-zero number of ‘b’s; it will not match just ‘a’.
+    ab+ matchs 'ab', 'abb' 'ab..' but not 'a' 
+
+> '?' Causes the resulting RE to match 0 or 1 repetitions of the preceding RE. ab? will match either ‘a’ or ‘ab’.
+
+> 'm' Specifies that exactly m copies of the previous RE should be matched; fewer matches cause the entire RE not to match. For example, a{6} will match exactly six 'a' characters, but not five. 
+
+    a{4, 6} will match 'aaaa',aaaaa'  and 'aaaaaa' and more {a} # attempting to match as many repetitions as possible
+    a{4, 5}? will return 'aaaa' when match 'aaaaaaa' #  to match as few repetitions as possibl
+
+> '[]' Used to indicate a set of characters.
+ 
+- Characters can be listed individually, e.g. [amk] will match 'a', 'm', or 'k'.
+Ranges of characters can be indicated by giving two characters and separating them by a '-', for example [a-z] will match any lowercase ASCII letter, [0-5][0-9] will match all the two-digits numbers from 00 to 59, and [0-9A-Fa-f] will match any hexadecimal digit. If - is escaped (e.g. [a\-z]) or if it’s placed as the first or last character (e.g. [-a] or [a-]), it will match a literal '-'.
+
+
+- Special characters lose their special meaning inside sets. For example, [(+*)] will match any of the literal characters '(', '+', '*', or ')'.
+
+- Character classes such as \w or \S (defined below) are also accepted inside a set, although the characters they match depends on whether ASCII or LOCALE mode is in force.
+
+- Characters that are not within a range can be matched by complementing the set. If the first character of the set is '^', all the characters that are not in the set will be matched. For example, [^5] will match any character except '5', and [^^] will match any character except '^'. ^ has no special meaning if it’s not the first character in the set.
+
+- To match a literal ']' inside a set, precede it with a backslash, or place it at the beginning of the set. For example, both [()[\]{}] and []()[{}] will both match a parenthesis.
+
+- Support of nested sets and set operations as in Unicode Technical Standard #18 might be added in the future
+
+> '\d' For Unicode (str) patterns:
+- Matches any Unicode decimal digit (that is, any character in Unicode character category [Nd]). This includes [0-9], and also many other digit characters. If the ASCII flag is used only [0-9] is matched.
+- For 8-bit (bytes) patterns:
+Matches any decimal digit; this is equivalent to [0-9].
+
+> '\D' Matches any character which is not a decimal digit. 
+
+> '\s' matches string containing a - z
+
+> (...)
+Matches whatever regular expression is inside the parentheses, and indicates the start and end of a group; the contents of a group can be retrieved after a match has been performed, and can be matched later in the string with the \number special sequence, described below. To match the literals '(' or ')', use \( or \), or enclose them inside a character class: [(], [)].
+
+> '^$'
+
+
+>'.*?'  Adding ? after the qualifier makes it perform the match in non-greedy or minimal fashion; as few characters as possible will be matched.
