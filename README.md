@@ -627,3 +627,50 @@ call file_name.func()
     with with1():
       print('tst is runing')
       raise NameError('testNameError')
+  
+###  Concurrency/ Threads
+    // function
+    import threading
+    import time
+    from threading import current_thread
+
+    def my_thread(arg1, arg2):
+      print(current_thread().getName(), 'start')
+      print('%s %s' %(arg1, arg2))
+      time.sleep(1)
+      print(current_thread().getName(), 'stop')
+
+
+    for i in range(1,6):
+      t1 = threading.Thread(target=my_thread, args=(i, i + 1))
+      t1.start()
+    print(current_thread().getName(), 'end')
+
+    // oop
+    import threading
+    from threading import current_thread
+
+
+    class my_thread(threading.Thread):
+      def run(self):
+        print(current_thread().getName(), 'start')
+        print('run')
+        print(current_thread().getName(), 'stop')
+
+
+    for i in range(10):
+      t1 = my_thread()
+      t1.run()
+      t1.join()
+
+    print(current_thread().getName(), 'end')
+
+    > strat() Start the thread’s activity.
+    It must be called at most once per thread object. It arranges for the object’s run() method to be invoked in a separate thread of control.
+
+
+    > run() representing the thread’s activity.
+  
+  More(https://docs.python.org/3.7/library/threading.html)
+
+  
