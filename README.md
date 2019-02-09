@@ -674,7 +674,11 @@ call file_name.func()
   More(https://docs.python.org/3.7/library/threading.html)
 
   ## library
-
+  1. Text processing services
+  2. data types
+  3. Generic Operating system services
+  4. internet protocols and support
+  5. developing tool
   ### re
   match and search
 
@@ -730,3 +734,4 @@ Matches whatever regular expression is inside the parentheses, and indicates the
 
 
 >'.*?'  Adding ? after the qualifier makes it perform the match in non-greedy or minimal fashion; as few characters as possible will be matched.
+
